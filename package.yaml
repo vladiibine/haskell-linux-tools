@@ -1,0 +1,71 @@
+name:                LinuxTools
+version:             0.1.0.0
+github:              "vladiibine/haskell-linux-tools"
+license:             BSD3
+author:              "Vlad-George Ardelean"
+maintainer:          "example@example.com"
+copyright:           "2021 Vlad-George Ardelean"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/LinuxTools#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  lt-find:
+    main:                Main.hs
+    source-dirs:         app/LTFind
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - LinuxTools
+
+  lt-ls:
+    main:               Main.hs
+    source-dirs:        app/LTLs
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - LinuxTools
+
+  lt-cat:
+    main:               Main.hs
+    source-dirs:        app/LTCat
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - LinuxTools
+  
+
+tests:
+  LinuxTools-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - LinuxTools
+    - hspec
+    - QuickCheck

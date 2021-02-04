@@ -1,0 +1,89 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 00b177e335103a24c9261ad43ace7613e530663f063d259821cc63724e8df653
+
+name:           LinuxTools
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/LinuxTools#readme>
+homepage:       https://github.com/githubuser/LinuxTools#readme
+bug-reports:    https://github.com/githubuser/LinuxTools/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/LinuxTools
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_LinuxTools
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable lt-cat
+  main-is: Main.hs
+  other-modules:
+      Paths_LinuxTools
+  hs-source-dirs:
+      app/LTCat
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      LinuxTools
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+executable lt-find
+  main-is: Main.hs
+  other-modules:
+      Paths_LinuxTools
+  hs-source-dirs:
+      app/LTFind
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      LinuxTools
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+executable lt-ls
+  main-is: Main.hs
+  other-modules:
+      Paths_LinuxTools
+  hs-source-dirs:
+      app/LTLs
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      LinuxTools
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite LinuxTools-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      LibSpec
+      Paths_LinuxTools
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      LinuxTools
+    , QuickCheck
+    , base >=4.7 && <5
+    , hspec
+  default-language: Haskell2010
